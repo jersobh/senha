@@ -47,6 +47,8 @@ export default {
     this.socket.on('callNext', function(data) {
       console.log('recebendo dados')
       self.data = data
+      var audio = new Audio('statics/beep.mp3');
+      audio.play();
     });
   },
   beforeDestroy () {
