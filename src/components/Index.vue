@@ -10,7 +10,7 @@
     <div class="layout-view">
       <div class="row width-5of5"">
         <div class="width-4of5">
-          <span v-if="data.call.length > 0" class="senha">{{ data.call[0].code }}{{ data.call[0].counter }}</span>
+          <span v-if="data.call.length > 0" class="senha">{{ data.call[data.call.length - 1].code }}{{ data.call[data.call.length - 1].counter }}</span>
         </div>
         <div class="width-1of5">
 
@@ -46,7 +46,7 @@ export default {
     });
     this.socket.on('callNext', function(data) {
       console.log('recebendo dados')
-      self.call = data
+      self.data = data
     });
   },
   beforeDestroy () {
