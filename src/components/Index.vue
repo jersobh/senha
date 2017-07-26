@@ -48,7 +48,22 @@ export default {
       console.log('recebendo dados')
       self.data = data
       var audio = new Audio('statics/beep.mp3');
+      audio.volume = 0.5;
       audio.play();
+      
+      var msg = new SpeechSynthesisUtterance();
+  
+	
+  
+	msg.volume = 1
+	msg.rate = 1
+	msg.pitch = 1
+  	msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == "Google português do Brasil"; })[0];	
+  
+  
+	msg.text = 'Senha: ' + data.call[data.call.length - 1].code + data.call[data.call.length - 1].counter;
+  
+	window.speechSynthesis.speak(msg);
     });
   },
   beforeDestroy () {
