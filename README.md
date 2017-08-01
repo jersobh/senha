@@ -1,6 +1,6 @@
-# Quasar App
+# Senha
 
-> A Quasar project
+> Sistema de senhas de atendimento escrito em Vuejs + Nodejs + Socket.io
 
 ## Build Setup
 
@@ -17,4 +17,3 @@ $ quasar build
 # lint code
 $ quasar lint
 ```
-# senha
